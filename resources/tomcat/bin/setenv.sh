@@ -54,9 +54,6 @@ JAVA_OPTS="$JAVA_OPTS \
 # Jasper config
 CATALINA_OPTS="$CATALINA_OPTS -Dorg.apache.jasper.compiler.Parser.STRICT_QUOTE_ESCAPING=false"
 
-# Enable Sakai demo mode
-#CATALINA_OPTS="$CATALINA_OPTS -Dsakai.demo=true"
-
 # Sets the http agent
 CATALINA_OPTS="$CATALINA_OPTS -Dhttp.agent=Sakai"
 
@@ -65,14 +62,3 @@ CATALINA_OPTS="$CATALINA_OPTS -Duser.timezone=US/Eastern"
 
 # Sets the cookie name
 CATALINA_OPTS="$CATALINA_OPTS -Dsakai.cookieName=SAKAIID"
-
-# JMX config
-#CATALINA_OPTS="$CATALINA_OPTS -Djava.rmi.server.hostname=172.31.6.159 \
-#	                          -Dcom.sun.management.jmxremote.port=xxxxx \
-#	                          -Dcom.sun.management.jmxremote.ssl=false \
-#	                          -Dcom.sun.management.jmxremote.authenticate=false" 
-
-# JDBC Driver
-if [[ $(pwd) =~ "mysql8" ]]; then
-    CLASSPATH="/var/jdbc-connectors/mysql-connector-j-8.0.31.jar"
-fi

@@ -3,7 +3,7 @@ services:
   app:
     image: sakai
     environment:
-      JAVA_OPTS: "$JAVA_OPTS -Dsakai.demo=true"
+      JAVA_OPTS: "$EXTRA_OPTS"
     depends_on:
       db:
         condition: service_started

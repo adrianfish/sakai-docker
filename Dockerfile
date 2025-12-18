@@ -13,7 +13,7 @@ RUN mkdir /deploy && mvn clean install --no-transfer-progress -T 1C sakai:deploy
 
 FROM tomcat:9-jdk17-temurin
 
-ENV JAVA_OPTS "$JAVA_OPTS -Dsakai.demo=false"
+ENV JAVA_OPTS "-Dsakai.demo=false"
 
 WORKDIR /usr/local/tomcat
 
