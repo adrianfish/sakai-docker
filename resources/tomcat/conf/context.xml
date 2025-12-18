@@ -1,0 +1,7 @@
+<Context>
+    <JarScanner>
+        <!-- This is to speedup startup so that tomcat doesn't scan as much -->
+        <JarScanFilter defaultPluggabilityScan="false"/>
+    </JarScanner>
+</Context>
+

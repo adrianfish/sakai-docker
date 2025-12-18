@@ -1,0 +1,24 @@
+version: '3.8'
+services:
+  app:
+    image: sakai
+    environment:
+      JAVA_OPTS: "$JAVA_OPTS -Dsakai.demo=true"
+    depends_on:
+      db:
+        condition: service_started
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+  db:
+    image: "mariadb:10.6.24-ubi9"
+    environment:
+      MARIADB_USER: sakai
+      MARIADB_PASSWORD: ironchef
+      MARIADB_DATABASE: sakai
+      MARIADB_ROOT_PASSWORD: example
+    restart: unless-stopped
+    volumes:
+      - data:/var/lib/mysql:Z
+volumes:
+  data:
